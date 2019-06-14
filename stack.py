@@ -3,7 +3,6 @@ class Stack:
         self.count = 0  # holds stack
         self.stack = {}
 
-    
     def push(self, value):
         self.stack[self.count] = value
         self.count += 1
@@ -13,7 +12,12 @@ class Stack:
             return None
         else:
             self.count -= 1
+            popped_item = self.stack[self.count]
             del self.stack[self.count]
+            return popped_item
+
+    def peek(self):
+        return self.stack[self.count - 1]
 
     def get_length(self):
         return self.count
